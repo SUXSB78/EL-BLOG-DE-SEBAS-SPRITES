@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emojis MSN - El Blog de Sebas</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      background-color: #000066;
+      background-image: url('https://www.transparenttextures.com/patterns/bright-squares.png');
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .header {
+      background: linear-gradient(to bottom, #0000CC, #000066);
+      border-bottom: 5px outset #FF9900;
+      padding: 15px;
+    }
+
+    .header h1 {
+      font-size: 30px;
+      margin: 0;
+      text-shadow: 2px 2px 0 #FF0000;
+      letter-spacing: 1px;
+      animation: colorChange 3s infinite;
+    }
+
+    @keyframes colorChange {
+      0% { color: #FFCC00; }
+      25% { color: #FF9900; }
+      50% { color: #FF0000; }
+      75% { color: #FF9900; }
+      100% { color: #FFCC00; }
+    }
+
+    .nav-bar {
+      background: #000033;
+      padding: 10px;
+      font-size: 16px;
+      border: 3px inset #FF9900;
+    }
+
+    .nav-bar a {
+      color: #FFCC00;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    .nav-bar a:hover {
+      color: #FF0000;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto;
+      background: #000033;
+      border: 4px outset #FF9900;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #FFCC00;
+      font-size: 24px;
+      text-decoration: underline overline;
+      margin-top: 30px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+
+    .emoji-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+
+    .emoji-grid img {
+      width: 64px;
+      height: 64px;
+      border: 3px outset #FFCC00;
+      background: #000;
+      transition: transform 0.2s ease;
+    }
+
+    .emoji-grid img:hover {
+      transform: scale(1.3);
+      border: 3px outset #FF0000;
+    }
+
+    .footer {
+      background: #000033;
+      color: #FFCC00;
+      padding: 20px;
+      border-top: 5px outset #FF9900;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>😎 Emojis MSN - MessenTools Retro</h1>
+  </div>
+
+  <div class="nav-bar">
+   <a href="index.html">Inicio</a>
+    <a href="html2.html">Tutoriales</a>
+    <a href="html3.html">Noticias</a>
+    <a href="animaciones.html">Videos</a>
+    <a href="html4.html">Saludos</a>
+    <a href="flash.html">Flash</a>
+    <a href="juegos1.html">Juegos</a>
+    <a href="colaboradores.html">Colaboradores</a>
+    <a href="temas.html">Temas</a>
+    <a href="emojismsn.html">Emojis</a>
+    <a href="redes.html">Redes</a>
+    <a href="chatx.html">Chat</a>
+    <a href="wallpapers.html">Wallpaper</a>
+  </div>
+
+  <div class="container">
+    <h2>🤖 Futurama</h2>
+    <div class="emoji-grid" id="futurama"></div>
+
+    <h2>🍩 Los Simpsons</h2>
+    <div class="emoji-grid" id="simpsons"></div>
+
+  </div>
+
+  <div class="footer">
+    💾 Hecho con cariño por Sebas | Inspirado en MessenTools y Escargot ✨
+  </div>
+
+  <script>
+    function loadEmojis(count, folder, baseName, extension, targetId) {
+      const grid = document.getElementById(targetId);
+      for (let i = 0; i <= count; i++) {
+        const num = i.toString().padStart(3, '0');
+        const img = document.createElement("img");
+        img.src = `https://www.messentools.com/images/emoticones/${folder}/${baseName}${num}.${extension}`;
+        img.alt = `${targetId} ${i}`;
+        img.onerror = () => img.style.display = 'none';
+        grid.appendChild(img);
+      }
+    }
+
+    loadEmojis(100, 'futurama', 'www.MessenTools.com-futurama-', 'jpg', 'futurama');
+    loadEmojis(100, 'simpsons', 'www.MessenTools.com-tv-series-cine-the-simpsons-', 'gif', 'simpsons');
+    loadEmojis(80, 'tuzky', 'www.MessenTools.com-tuzky-', 'gif', 'tuzky');
+    loadEmojis(80, 'onionhead', 'www.MessenTools.com-onionhead-', 'gif', 'onionhead');
+    loadEmojis(60, 'futbol', 'www.MessenTools.com-futbol-', 'gif', 'futbol');
+  </script>
+
+</body>
+</html>

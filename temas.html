@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>El Blog de Sebas 2001 - Reunion 7</title>
+  <link rel="icon" href="https://win7icons.visnalize.com/icons/folder.ico" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://wallpapers.com/images/hd/dark-windows-7-logo-art-ht7tf07649yyjxoy.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: white;
+    }
+
+    /* Ventana personalizada */
+    .ventana {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      width: 650px;
+      border: 2px solid #0078D7;
+      border-radius: 6px;
+      box-shadow: 0 0 20px #0078d7;
+      background: rgba(240, 248, 255, 0.97);
+      color: black;
+    }
+
+    .barra {
+      background: linear-gradient(to bottom, #e1ecfa, #c0d9f5);
+      padding: 10px;
+      font-weight: bold;
+      cursor: move;
+      border-bottom: 1px solid #0078D7;
+      border-radius: 6px 6px 0 0;
+      color: #003366;
+    }
+
+    .contenido {
+      padding: 20px;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px;
+      text-align: center;
+      color: #00ccff;
+      font-size: 18px;
+      font-family: 'Segoe UI', sans-serif;
+      box-shadow: 0 -2px 10px #0078d7;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Anuncios grandes */
+    .anuncio {
+      position: fixed;
+      top: 120px;
+      z-index: 999;
+    }
+
+    .anuncio.izq {
+      left: 15px;
+    }
+
+    .anuncio.der {
+      right: 15px;
+    }
+
+    .anuncio img {
+      width: 160px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #000;
+    }
+
+    /* Escritorio */
+    .escritorio {
+      position: fixed;
+      top: 40px;
+      left: 30px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .escritorio div {
+      cursor: pointer;
+    }
+
+    .escritorio img {
+      width: 64px;
+    }
+
+    .escritorio span {
+      color: white;
+      font-size: 14px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Iconos tipo escritorio -->
+<div class="escritorio">
+  <div onclick="scrollToSection('ventana1')">
+    <img src="https://raw.githubusercontent.com/Visnalize/resources/main/icons/win7/Accessibility/accessibilitycpl_340.ico">
+    <span>Menú</span>
+  </div>
+  <div onclick="alert('Próximamente tutoriales detallados.')">
+    <img src="https://raw.githubusercontent.com/Visnalize/resources/main/icons/win7/Windows%20Live%20Photo%20Gallery/WLXPhotoLibraryResources_2054.ico">
+    <span>Tutoriales</span>
+  </div>
+
+</div>
+
+<!-- Anuncios grandes -->
+<a href="https://www.redbull.com/co-es" class="anuncio izq" target="_blank">
+  <img src="https://i.pinimg.com/originals/bf/7d/57/bf7d57645a4aec7aa2dd65c2c446e182.jpg" alt="Red Bull">
+</a>
+
+<a href="https://www.monsterenergy.com/es-co/" class="anuncio der" target="_blank">
+  <img src="https://i.pinimg.com/736x/58/1b/f7/581bf7c51b768b37eabc315c9022c689.jpg" alt="Monster">
+</a>
+
+<!-- Ventana principal -->
+<div class="ventana" id="ventana1">
+  <div class="barra" id="barra1">🪟 Reunion 7 - El Blog de Sebas 2001</div>
+  <div class="contenido">
+    <h2>🔵 ¿Qué es Reunion 7?</h2>
+    <p><strong>Reunion 7</strong> es una experiencia visual moderna basada en Windows 10/11 que recrea el look clásico de Windows 7.</p>
+    <p>Visítalo: <a href="https://reunion7.com" target="_blank">reunion7.com</a></p>
+
+    <h3>🧠 Estética Frutiger Aero</h3>
+    <p>Este estilo de los 2000s está de vuelta con Aero Glass, íconos brillantes, sonidos de arranque y más.</p>
+
+    <h3>💻 Programas recomendados:</h3>
+    <ul>
+      <li><strong>StartAllBack</strong>, <strong>Open-Shell</strong>, <strong>WindowBlinds</strong></li>
+      <li><strong>RetroBar</strong>, <strong>OldNewExplorer</strong>, <strong>Rainmeter</strong></li>
+      <li><strong>UxStyle</strong> para aplicar temas personalizados</li>
+    </ul>
+
+    <h3>🛠️ Cómo flashear una ISO:</h3>
+    <ol>
+      <li>Descarga <a href="https://rufus.ie/es/" target="_blank">Rufus</a> o <a href="https://www.balena.io/etcher/" target="_blank">Balena Etcher</a></li>
+      <li>Inserta una USB de 8 GB</li>
+      <li>Selecciona la ISO, inicia el flasheo y listo</li>
+    </ol>
+
+    <h3>🛒 Objetos 2000s en eBay:</h3>
+    <ul>
+      <li>📱 Nokia 3310, 💿 Discos retro, 🎵 iPod Classic</li>
+      <li>🖼️ Posters de Windows, MSN, LimeWire</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Footer personalizado -->
+<footer>
+  &copy; El Blog de Sebas 2001 — Siempre ganándole a nuestra competencia 🏆
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Hacer ventana movible
+  dragElement(document.getElementById("ventana1"), document.getElementById("barra1"));
+
+  function dragElement(elmnt, handle) {
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    handle.onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+      e.preventDefault();
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+      e.preventDefault();
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+
+  // Scroll a secciones
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      window.scrollTo({ top: el.offsetTop - 50, behavior: 'smooth' });
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El San Andresito de Sebas</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      background-image: url('gears-bg.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #e50914;
+      text-shadow: 2px 2px 8px #000;
+      font-size: 40px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 20px auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-left: 5px solid #e50914;
+      border-radius: 8px;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      box-shadow: 0 0 15px #e5091477;
+    }
+
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #ff000033;
+    }
+
+    .juego {
+      background: #1b1b1bcc;
+      border: 2px solid #e50914;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px #ff000088;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .juego:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #ff0000cc;
+    }
+
+    .juego img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .juego h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      color: #ffaaaa;
+    }
+
+    .juego a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #e50914;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .juego a:hover {
+      background: #ff2a2a;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 El San Andresito de Sebas</h1>
+
+  <div class="intro">
+    <p>🔥 <strong>¡Bienvenido al San Andresito de Sebas!</strong> 🔥<br>
+    Antes de empezar, recuerda instalar <strong>uTorrent Web</strong>. Puedes descargarlo desde aquí:
+    <a href="https://www.utorrent.com/es/utweb-download/" target="_blank" style="color:#00e6ff; text-decoration: underline;">Instalar uTorrent Web</a>.<br>
+    Luego de instalarlo... ¡ahora sí, a jugar sin límites! 🕹️🎉</p>
+  </div>
+
+  <div class="catalogo" id="catalogo"></div>
+  <script>
+    const juegos = [
+      {nombre:"Angry Birds Collection", url:"https://www.gamestorrents.app/juegos-pc/angry-birds-all-games-collection-englishactualizadosp2p/", img:"https://www.gamestorrents.app/wp-content/uploads/2023/03/angry-birds-collection.jpg"},
+      {nombre:"Minecraft Java Edition", url:"https://www.gamestorrents.app/juegos-pc/minecraft-java-edition/", img:"https://www.gamestorrents.app/wp-content/uploads/2023/01/minecraft-java-edition.jpg"},
+      {nombre:"Viva Piñata", url:"https://www.gamestorrents.app/juegos-pc/viva-pinata/", img:"https://www.gamestorrents.app/wp-content/uploads/2023/05/viva-pinata.jpg"},
+      {nombre:"Call of Duty: Modern Warfare III", url:"https://www.gamestorrents.app/juegos-pc/call-of-duty-modern-warfare-iii/", img:"https://www.gamestorrents.app/wp-content/uploads/2023/11/call-of-duty-modern-warfare-iii.jpg"},
+      {nombre:"Resident Evil 4 Remake", url:"https://www.gamestorrents.app/juegos-pc/resident-evil-4-remake/", img:"https://www.gamestorrents.app/wp-content/uploads/2023/03/resident-evil-4-remake.jpg"},
+      {nombre:"Hogwarts Legacy", url:"https://www.gamestorrents.app/juegos-pc/hogwarts-legacy/", img:"https://www.gamestorrents.app/wp-content/uploads/2023/02/hogwarts-legacy.jpg"},
+      {nombre:"Assassin’s Creed Mirage", url:"https://www.gamestorrents.app/juegos-pc/assassins-creed-mirage/", img:"https://www.gamestorrents.app/wp-content/uploads/2023/10/assassins-creed-mirage.jpg"},
+      {nombre:"Forza Horizon 5", url:"https://www.gamestorrents.app/juegos-pc/forza-horizon-5/", img:"https://www.gamestorrents.app/wp-content/uploads/2021/11/forza-horizon-5.jpg"},
+      {nombre:"FIFA 23", url:"https://www.gamestorrents.app/juegos-pc/fifa-23/", img:"https://www.gamestorrents.app/wp-content/uploads/2022/09/fifa-23.jpg"},
+      {nombre:"Red Dead Redemption 2", url:"https://www.gamestorrents.app/juegos-pc/red-dead-redemption-2/", img:"https://www.gamestorrents.app/wp-content/uploads/2019/12/red-dead-redemption-2.jpg"},
+      {nombre:"V Rising", url:"https://www.gamestorrents.app/juegos-pc/v-rising-5/", img:"https://www.gamestorrents.app/wp-content/uploads/2024/06/v-rising.jpg"},
+      {nombre:"Ebola Village 2", url:"https://www.gamestorrents.app/juegos-pc/ebola-village-2/", img:"https://www.gamestorrents.app/wp-content/uploads/2024/06/ebola-village-2.jpg"},
+      {nombre:"Clair Obscur Expedition 33", url:"https://www.gamestorrents.app/juegos-pc/clair-obscur-expedition-33-3/", img:"https://www.gamestorrents.app/wp-content/uploads/2024/06/clair-obscur-expedition-33.jpg"}
+    ];
+
+    const catalogo = document.getElementById("catalogo");
+    juegos.forEach(juego => {
+      const item = document.createElement("div");
+      item.className = "juego";
+      item.innerHTML = `
+        <img src="${juego.img}" alt="${juego.nombre}">
+        <h3>${juego.nombre}</h3>
+        <a href="${juego.url}" target="_blank">Descargar</a>
+      `;
+      catalogo.appendChild(item);
+    });
+  </script>
+</body>
+</html>

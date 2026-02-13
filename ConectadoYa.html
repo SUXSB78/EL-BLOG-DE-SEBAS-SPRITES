@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>ConectadoYA - MSN Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <div class="user-info">
+      <img id="user-img" src="" alt="Foto" />
+      <span id="user-name">Usuario</span>
+    </div>
+    <hr />
+    <div class="channels">
+      <h3># Amigos</h3>
+      <ul id="friendsList"></ul>
+      <h3># Grupos</h3>
+      <ul id="groupsList"></ul>
+    </div>
+    <button onclick="openConfig()">⚙ Configuración</button>
+  </div>
+
+  <div class="chat-container">
+    <div id="chat-header">Chat Privado</div>
+    <div id="messages"></div>
+    <div class="chat-input">
+      <input type="text" id="messageInput" placeholder="Escribe algo..." />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <div id="configModal" class="modal hidden">
+    <h2>Configuración</h2>
+    <input type="text" id="editName" placeholder="Nuevo nombre" />
+    <input type="file" id="editPhoto" />
+    <button onclick="saveConfig()">Guardar</button>
+    <button onclick="closeConfig()">Salir</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js"></script>
+  <script src="firebase-init.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

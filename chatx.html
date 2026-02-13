@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sebas Messenger</title>
+  <link rel="icon" href="https://win7icons.visnalize.com/icons/messenger.ico" type="image/x-icon">
+
+  <style>
+    body {
+      background: url('https://wallpapers.com/images/high/windows-1-plcmucpw2t7jlp04.webp') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Tahoma, sans-serif;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .icon {
+      position: absolute;
+      width: 80px;
+      text-align: center;
+      color: white;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .icon img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .icon span {
+      display: block;
+      margin-top: 5px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .chat-window, .app-window {
+      width: 600px;
+      height: 500px;
+      background: #e8f0fe;
+      border: 2px solid #0054a6;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      border-radius: 6px;
+      position: absolute;
+      top: 100px;
+      left: 150px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .title-bar {
+      background: linear-gradient(#0b72c1, #084a87);
+      color: white;
+      padding: 4px 10px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: move;
+    }
+
+    .title-bar-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .title-bar-left img {
+      height: 16px;
+      margin-right: 5px;
+    }
+
+    .window-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .win-btn {
+      width: 16px;
+      height: 16px;
+      background: white;
+      border: 1px solid #777;
+      text-align: center;
+      font-weight: bold;
+      line-height: 14px;
+      cursor: pointer;
+    }
+
+    .win-btn:hover {
+      background: #c00;
+      color: white;
+    }
+
+    iframe {
+      border: none;
+      flex: 1;
+    }
+
+    .assistant {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      width: 120px;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: 140px;
+      right: 10px;
+      background: #ffffe0;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      max-width: 220px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      animation: fadein 0.5s ease;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Íconos -->
+  <div class="icon" style="top: 30px; left: 20px;" onclick="toggleMessenger()">
+    <img src="https://raw.githubusercontent.com/Visnalize/resources/main/icons/win7/Windows%20Live%20Messenger/msgsres_1.ico">
+    <span>Messenger</span>
+  </div>
+
+  <div class="icon" style="top: 120px; left: 20px;">
+    <img src="https://raw.githubusercontent.com/Visnalize/resources/main/icons/win7/Shell32.dll/shell32_16.ico">
+    <span>Mi PC</span>
+  </div>
+
+  <div class="icon" style="top: 210px; left: 20px;">
+    <img src="https://raw.githubusercontent.com/Visnalize/resources/main/icons/win7/Shell32.dll/imageres_54.ico">
+    <span>Papelera</span>
+  </div>
+
+  <div class="icon" style="top: 300px; left: 20px;" onclick="openMagicTale()">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/011/194/096/small_2x/cute-witch-hat-watercolor-painted-free-png.png">
+    <span>Magic Tale</span>
+  </div>
+
+  <div class="icon" style="top: 390px; left: 20px;" onclick="openEncarta()">
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/47264ce6-f9be-440a-8fe5-de7b40f003e7/dei3v4g-fbfdc41f-0987-4021-8db4-c88b7e60a6b5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ3MjY0Y2U2LWY5YmUtNDQwYS04ZmU1LWRlN2I0MGYwMDNlN1wvZGVpM3Y0Zy1mYmZkYzQxZi0wOTg3LTQwMjEtOGRiNC1jODhiN2U2MGE2YjUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.a7UpTvanwwQyIktNfESL-47o3mOE947z0CPIdQbQzKU">
+    <span>Encarta</span>
+  </div>
+
+  <div class="icon" style="top: 480px; left: 20px;" onclick="openPaint()">
+    <img src="https://raw.githubusercontent.com/Visnalize/resources/main/icons/win7/Default%20Programs/mspaint_2.ico">
+    <span>Paint XP</span>
+  </div>
+
+  <!-- ✅ Ícono Inicio -->
+  <div class="icon" style="top: 570px; left: 20px;" onclick="location.href='index.html'">
+    <img src="https://raw.githubusercontent.com/Visnalize/resources/main/icons/win7/Action%20Center/ActionCenterCPL_6.ico" alt="Inicio">
+    <span>Inicio</span>
+  </div>
+
+  <!-- Ventana Messenger -->
+  <div class="chat-window" id="messengerWindow">
+    <div class="title-bar" id="dragBar">
+      <div class="title-bar-left">
+        <img src="https://raw.githubusercontent.com/Visnalize/resources/main/icons/win7/Windows%20Live%20Messenger/msgsres_1.ico">
+        Sebas Messenger
+      </div>
+      <div class="window-buttons">
+        <div class="win-btn" onclick="minimizeMessenger()">&#x2212;</div>
+        <div class="win-btn" onclick="closeMessenger()">&#x2715;</div>
+      </div>
+    </div>
+    <iframe src="https://my.cbox.ws/Deja_Tu_Huella" width="100%" height="100%"></iframe>
+  </div>
+
+  <!-- Asistente -->
+  <div class="assistant">
+    <img src="https://vignette.wikia.nocookie.net/baldinite/images/9/92/Of9cm1.gif/revision/latest/top-crop/width/360/height/450?cb=20181028122046" width="100%">
+    <div class="bubble" id="bubble">Bienvenido a Sebas Messenger, conoce, habla y disfruta!</div>
+  </div>
+
+  <!-- Ventana App -->
+  <div class="app-window" id="appWindow" style="display: none;">
+    <div class="title-bar" id="appBar">
+      <div class="title-bar-left">
+        <img src="https://win7icons.visnalize.com/icons/info.ico">
+        Aplicación
+      </div>
+      <div class="window-buttons">
+        <div class="win-btn" onclick="closeApp()">&#x2715;</div>
+      </div>
+    </div>
+    <div style="padding: 20px; font-size: 14px;">
+      <p id="appContent">Cargando aplicación...</p>
+    </div>
+  </div>
+
+  <script>
+    // Arrastrar ventana
+    const win = document.getElementById('messengerWindow');
+    const bar = document.getElementById('dragBar');
+    let offsetX, offsetY, isDragging = false;
+
+    bar.addEventListener('mousedown', e => {
+      isDragging = true;
+      offsetX = e.clientX - win.offsetLeft;
+      offsetY = e.clientY - win.offsetTop;
+    });
+
+    document.addEventListener('mouseup', () => isDragging = false);
+    document.addEventListener('mousemove', e => {
+      if (isDragging) {
+        win.style.left = (e.clientX - offsetX) + 'px';
+        win.style.top = (e.clientY - offsetY) + 'px';
+      }
+    });
+
+    function closeMessenger() {
+      win.style.display = 'none';
+    }
+
+    function minimizeMessenger() {
+      win.style.height = '30px';
+      win.querySelector('iframe').style.display = 'none';
+    }
+
+    function toggleMessenger() {
+      win.style.display = 'flex';
+      win.style.height = '500px';
+      win.querySelector('iframe').style.display = 'block';
+    }
+
+    // Burbujas de Clippy
+    const frases = [
+      "Idea de: cgm200",
+      "Créditos a Cbox por el chat",
+      "Magic Tale de ColorStudios 2099?",
+      "¿Ya hablaste con alguien hoy?",
+      "Haz clic en un ícono para comenzar."
+    ];
+    const bubble = document.getElementById('bubble');
+
+    setTimeout(() => {
+      let index = 0;
+      setInterval(() => {
+        bubble.textContent = frases[index];
+        index = (index + 1) % frases.length;
+      }, 20000);
+    }, 8000);
+
+    // Ventanas apps
+    const appWindow = document.getElementById('appWindow');
+    const appContent = document.getElementById('appContent');
+
+    function openMagicTale() {
+      appWindow.style.display = 'flex';
+      appContent.textContent = "🎮 Magic Tale se lanzará pronto por ColorStudios. ¡Mantente atento!";
+    }
+
+    function openEncarta() {
+      appWindow.style.display = 'flex';
+      appContent.textContent = "📘 Encarta 2009: Enciclopedia fuera de línea. (Simulación)";
+    }
+
+    function openPaint() {
+      appWindow.style.display = 'flex';
+      appContent.textContent = "🎨 Paint XP está cargando... (interfaz no disponible)";
+    }
+
+    function closeApp() {
+      appWindow.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cómo crear tu web en Neocities</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      background-color: #000066;
+      background-image: url('https://www.transparenttextures.com/patterns/bright-squares.png');
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .header {
+      background: linear-gradient(to bottom, #0000CC, #000066);
+      border-bottom: 5px outset #FF9900;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+
+    .header h1 {
+      font-size: 34px;
+      margin: 0;
+      text-shadow: 3px 3px 0 #FF0000;
+      letter-spacing: 2px;
+    }
+
+    .nav-bar {
+      background: #000033;
+      padding: 10px;
+      font-size: 16px;
+      border: 3px inset #FF9900;
+    }
+
+    .nav-bar a {
+      color: #FFCC00;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    .nav-bar a:hover {
+      color: #FF0000;
+      text-decoration: blink;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: 30px auto;
+      background: #000033;
+      padding: 20px;
+      border: 5px outset #FF9900;
+    }
+
+    h1, h2 {
+      color: #FFCC00;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    a {
+      color: #00ffff;
+    }
+
+    .step {
+      background-color: #000066;
+      padding: 20px;
+      border: 4px outset #FF9900;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    ul {
+      text-align: left;
+      margin: 15px 0 0 25px;
+    }
+
+    code {
+      color: #7CFC00;
+    }
+
+    pre {
+      background-color: #000000;
+      color: #00ff00;
+      padding: 12px;
+      border-radius: 6px;
+      font-family: monospace;
+      border: 2px inset #FF9900;
+      overflow-x: auto;
+      text-align: left;
+    }
+
+    .back {
+      margin-top: 30px;
+    }
+
+    .back a {
+      color: #FFCC00;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .footer {
+      background: #000033;
+      color: #FFCC00;
+      padding: 20px;
+      margin-top: 30px;
+      border-top: 5px outset #FF9900;
+      font-size: 14px;
+    }
+
+    #secret-heart {
+      position: fixed;
+      top: 5px;
+      left: 5px;
+      font-size: 22px;
+      color: rgba(255, 0, 0, 0.08);
+      cursor: pointer;
+      transition: 0.3s ease;
+      z-index: 100;
+    }
+
+    #secret-heart:hover {
+      color: red;
+      font-size: 25px;
+    }
+
+    .retro-title {
+      animation: colorChange 3s infinite;
+    }
+
+    @keyframes colorChange {
+      0% { color: #FFCC00; }
+      25% { color: #FF9900; }
+      50% { color: #FF0000; }
+      75% { color: #FF9900; }
+      100% { color: #FFCC00; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 class="retro-title">📚 Tutorial Neocities Retro</h1>
+  </div>
+
+  <div class="nav-bar">
+     <a href="index.html">Inicio</a>
+    <a href="html2.html">Tutoriales</a>
+    <a href="html3.html">Noticias</a>
+    <a href="animaciones.html">Videos</a>
+    <a href="html4.html">Saludos</a>
+    <a href="flash.html">Flash</a>
+    <a href="juegos1.html">Juegos</a>
+    <a href="colaboradores.html">Colaboradores</a>
+    <a href="temas.html">Temas</a>
+    <a href="emojismsn.html">Emojis</a>
+    <a href="redes.html">Redes</a>
+    <a href="chatx.html">Chat</a>
+    <a href="wallpapers.html">Wallpaper</a>
+  </div>
+
+  <div class="container">
+    <h1 class="retro-title">🌐 Cómo crear tu sitio web gratis en Neocities</h1>
+    <p>¿Quieres tener tu propia página web gratis y fácil de hacer? En este tutorial aprenderás paso a paso cómo crearla usando <strong>Neocities</strong>, una plataforma gratuita y confiable.</p>
+
+    <div class="step">
+      <h2>📝 Paso 1: Crear una cuenta en Neocities</h2>
+      <p>1. Ve al sitio oficial: <a href="https://neocities.org/" target="_blank">https://neocities.org/</a></p>
+      <p>2. Haz clic en <strong>“Sign Up”</strong> para registrarte.</p>
+      <p>3. Completa el formulario con los siguientes datos:</p>
+      <ul>
+        <li><strong>Username:</strong> miweb123</li>
+        <li><strong>Email:</strong> ejemplo@gmail.com</li>
+        <li><strong>Password:</strong> contrasena123</li>
+      </ul>
+      <p>4. Acepta los términos y haz clic en <strong>“Create My Site”</strong>.</p>
+    </div>
+
+    <div class="step">
+      <h2>📁 Paso 2: Acceder a tu sitio y entender el panel</h2>
+      <p>Tu URL será algo como:</p>
+      <p><code>https://miweb123.neocities.org/</code></p>
+      <ul>
+        <li>Sube archivos HTML, CSS, JS e imágenes.</li>
+        <li>Edita directamente desde el navegador.</li>
+        <li>Revisa estadísticas.</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <h2>🧠 Paso 3: Subir tu primer archivo HTML</h2>
+      <p>1. Crea un archivo <code>index.html</code> así:</p>
+      <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Mi primera web&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;¡Hola mundo desde Neocities!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+      <p>2. Súbelo con “Upload Files”.</p>
+    </div>
+
+    <div class="step">
+      <h2>🎨 Paso 4: Personaliza tu sitio</h2>
+      <ul>
+        <li><strong>HTML:</strong> contenido.</li>
+        <li><strong>CSS:</strong> estilos.</li>
+        <li><strong>JS:</strong> funciones.</li>
+        <li><strong>Imágenes:</strong> .jpg, .png, .gif.</li>
+      </ul>
+      <p>Ejemplo para enlazar tu CSS:</p>
+      <pre>
+&lt;link rel="stylesheet" href="style.css"&gt;
+      </pre>
+    </div>
+
+    <div class="step">
+      <h2>🚀 Paso 5: Publica y comparte</h2>
+      <p>Comparte tu web: <code>https://miweb123.neocities.org/</code></p>
+      <p>¡Ya estás en línea!</p>
+    </div>
+
+    <div class="step">
+      <h2>💡 Consejos adicionales</h2>
+      <ul>
+        <li>No borres <code>index.html</code>.</li>
+        <li>Organiza tus carpetas.</li>
+        <li>Explora otros sitios Neocities.</li>
+        <li>Aprende más en <a href="https://developer.mozilla.org/es/" target="_blank">MDN Web Docs</a>.</li>
+      </ul>
+    </div>
+
+    <div class="back">
+      <a href="html2.html">← Volver a Tutoriales</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    Hecho con cariño por Sebas 💻✨
+  </div>
+
+  <div id="secret-heart" title="Clave para este ❤️: 201000" onclick="location.href='nothing.html'">❤️</div>
+</body>
+</html>

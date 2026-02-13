@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pikachu Pet</title>
+  <style>
+    body {
+      background-color: #000066;
+      background-image: url('https://www.transparenttextures.com/patterns/bright-squares.png');
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .pantalla-inicio {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000066;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      font-size: 32px;
+      font-weight: bold;
+      animation: fadeOut 3s ease forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    .pikachu-container {
+      position: relative;
+      background: url('https://w7.pngwing.com/pngs/136/158/png-transparent-bedroom-cartoon-living-room-animation-room-interior-design-room-interior-design-services.png') no-repeat center center;
+      background-size: cover;
+      margin: 30px auto;
+      padding: 20px;
+      width: 640px;
+      height: 400px;
+      border: 5px outset #FF9900;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      flex-direction: column;
+    }
+
+    #pikachu {
+      width: 220px;
+      image-rendering: pixelated;
+    }
+
+    .dialogo {
+      margin-top: 5px;
+      background: #000033;
+      color: #FFCC00;
+      padding: 10px;
+      border: 3px outset #FF9900;
+      border-radius: 10px;
+      max-width: 300px;
+      font-size: 14px;
+    }
+
+    .botones {
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 700px;
+    }
+
+    button {
+      background-color: #000033;
+      border: 3px outset #FF9900;
+      color: #FFCC00;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    button:hover {
+      background-color: #FF9900;
+      color: #000;
+    }
+
+    .radio {
+      margin-top: 30px;
+    }
+
+    .radio img {
+      width: 300px;
+    }
+
+    .boton-radio {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: red;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid #000;
+      cursor: pointer;
+    }
+
+    .navegacion {
+      margin: 30px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .navegacion a {
+      background: #000033;
+      color: #FFCC00;
+      padding: 10px 20px;
+      border: 3px outset #FF9900;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .navegacion a:hover {
+      background: #FF9900;
+      color: #000033;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pantalla-inicio">Creado por suxsb78</div>
+
+  <div class="pikachu-container">
+    <img id="pikachu" src="https://www.clipartmax.com/png/full/299-2990812_pikachu-gif-pictures-images-photos-pixel-pikachu.png" alt="Pikachu" onclick="reproducirSonido()">
+    <div class="dialogo" id="dialogoJugador">Hola, soy tu Pikachu 😄</div>
+    <div class="dialogo" id="dialogoPikachu">¡Pika pika!</div>
+  </div>
+
+  <div class="botones">
+    <button onclick="interactuar('¡Hola Pikachu!', '¡Pika pika! 😊')">Saludar</button>
+    <button onclick="interactuar('Te traje un regalo', '¡Pikaaa! 🎁')">Regalo</button>
+    <button onclick="interactuar('Cántame algo', 'Pika-pikaaaaa 🎵')">Cantar</button>
+    <button onclick="interactuar('¿Jugamos?', '¡Pika-chu! ⚽')">Jugar</button>
+    <button onclick="interactuar('Hora de dormir', 'Pika... zzz 😴')">Dormir</button>
+    <button onclick="interactuar('Vamos a comer', '¡Pikachu come manzanas! 🍎')">Comer</button>
+    <button onclick="interactuar('Baila para mí', '¡Pikachu baila! 🕺')">Bailar</button>
+    <button onclick="interactuar('Cuéntame un chiste', '¿Pikachu risa? ¡Pika-jajaja!')">Chiste</button>
+    <button onclick="interactuar('Dame un abrazo', '¡Pikaaa-hug! 🤗')">Abrázame</button>
+    <button onclick="interactuar('Hasta luego Pikachu', '¡Pika adiós! 👋')">Despedida</button>
+  </div>
+
+  <div class="navegacion">
+  <div class="nav-bar">
+    <a href="index.html">Inicio</a>
+    <a href="html2.html">Tutoriales</a>
+    <a href="html3.html">Noticias</a>
+    <a href="animaciones.html">Videos</a>
+    <a href="html4.html">Saludos</a>
+    <a href="flash.html">Flash</a>
+    <a href="juegos1.html">Juegos</a>
+    <a href="colaboradores.html">Colaboradores</a>
+    <a href="temas.html">Temas</a>
+    <a href="emojismsn.html">Emojis</a>
+    <a href="redes.html">Redes</a>
+    <a href="chatx.html">Chat</a>
+    <a href="wallpapers.html">Wallpaper</a>
+  </div>
+  </div>
+
+  <div class="radio">
+    <div style="position: relative; display: inline-block;">
+      <img src="https://servicentro.co/wp-content/uploads/2021/05/Equipo-de-sonido-Sony-G.png" alt="Radio">
+      <div class="boton-radio" onclick="toggleRadio()"></div>
+    </div>
+    <audio id="queenRadio" src="https://www.last.fm/es/music/Queen/MP3+Collection/Another+One+Bites+the+Dust"></audio>
+  </div>
+
+  <audio id="pikachuSound" src="https://www.myinstants.com/es/instant/pikachu-sound-28900/?utm_source=copy&utm_medium=share#google_vignette"></audio>
+
+  <script>
+    function interactuar(jugadorTexto, pikachuTexto) {
+      document.getElementById('dialogoJugador').innerText = jugadorTexto;
+      document.getElementById('dialogoPikachu').innerText = pikachuTexto;
+      reproducirSonido();
+    }
+
+    function toggleRadio() {
+      const radio = document.getElementById('queenRadio');
+      if (radio.paused) {
+        radio.play();
+      } else {
+        radio.pause();
+      }
+    }
+
+    function reproducirSonido() {
+      const sonido = document.getElementById('pikachuSound');
+      sonido.currentTime = 0;
+      sonido.play();
+    }
+  </script>
+
+</body>
+</html>

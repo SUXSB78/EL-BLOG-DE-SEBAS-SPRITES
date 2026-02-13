@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EL BLOG DE SEBAS</title>
+  <style>
+    body {
+      background-color: #000066;
+      background-image: url('https://www.transparenttextures.com/patterns/bright-squares.png');
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      font-size: 36px;
+      margin: 20px;
+      animation: cambioColor 2s infinite alternate;
+      text-shadow: 2px 2px #000000;
+    }
+
+    @keyframes cambioColor {
+      0% { color: yellow; }
+      100% { color: red; }
+    }
+
+    nav {
+      background-color: #000040;
+      padding: 8px;
+      text-align: center;
+      border-top: 2px solid orange;
+      border-bottom: 2px solid orange;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #FFA500;
+      margin: 4px 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #FFA500;
+      color: #000040;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .caja, .lateral {
+      background-color: #000033;
+      border: 2px solid orange;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .caja {
+      width: 65%;
+    }
+
+    .lateral {
+      width: 30%;
+    }
+
+    .post {
+      margin-bottom: 15px;
+      border: 2px solid #FFA500;
+      padding: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000033;
+      color: #FFA500;
+      border-top: 2px solid orange;
+      margin-top: 30px;
+    }
+
+    footer img {
+      margin-top: 15px;
+      width: 130px;
+    }
+
+    @media (max-width: 768px) {
+      .caja, .lateral {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>EL BLOG DE SEBAS</header>
+
+  <nav>
+  <a href="index.html">Inicio</a>
+  <a href="html2.html">Tutoriales</a>
+  <a href="html3.html">Noticias</a>
+  <a href="animaciones.html">Videos</a>
+  <a href="html4.html">Saludos</a>
+  <a href="flash.html">Flash</a>
+  <a href="juegos1.html">Juegos</a>
+  <a href="colaboradores.html">Colaboradores</a>
+  <a href="temas.html">Temas</a>
+  <a href="emojismsn.html">Emojis</a>
+  <a href="redes.html">Redes</a>
+  <a href="chatx.html">Chat</a>
+  <a href="wallpapers.html">Wallpaper</a>
+  <a href="pktk.html">Pikachu</a>
+  <a href="login.html">ConectadoYA</a>
+</nav>
+
+  <div class="contenedor">
+    <div class="caja">
+      <div class="post">
+        <h3>🎮 ¡Bienvenido al blog de Sebas!</h3>
+        <p>Aquí encontrarás contenido sobre juegos, arte y más. ¡Disfruta tu visita!</p>
+      </div>
+      <div class="post">
+        <h3>📢 Explora los enlaces de arriba</h3>
+        <p>Tutoriales, series animadas y foros como en los viejos tiempos!</p>
+      </div>
+      <div class="post">
+        <h3>✌ Ya hay emojis para tu MSN</h3>
+        <p>¡Descárgalos y úsalos con tus amig@s del MSN!</p>
+      </div>
+    </div>
+
+    <div class="lateral">
+      <h3>ÚLTIMAS NOVEDADES</h3>
+      <ul>
+        <li>El Blog de Sebas ¡ya superó las 3000 visitas!</li>
+        <li>¡Nuevas animaciones retro! (como Reggie, Luffy y más emojis)</li>
+        <li>¡Nuevos videos de mis ediciones con GTA al máximo nivel!</li>
+        <li>Próximamente: juegos estilo Flash de los 2000s</li>
+        <li>Se ha actualizado la sección de Emojis con más contenido retro</li>
+        <li>Ya puedes dejar saludos personalizados en la nueva sección "Chat"</li>
+        <li>Próximas gameplays completas de Mario Kart al 100%</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    💬 Sígueme en Escargot! <b>chiquiytt@escargot.chat</b><br>
+    Hecho con cariño por Sebas 🌟<br>
+    <img src="Welcome.gif" alt="GIF retro">
+  </footer>
+
+</body>
+</html>
